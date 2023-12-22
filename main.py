@@ -23,7 +23,8 @@ timy.color(('cyan'), ('black'))
 #     timy.right(90)
 
 # test position
-print(timy.pos())
+# print(timy.pos())
+
 # set control variable
 lenght = 0
 # set loop to draw dashed line
@@ -33,8 +34,14 @@ while lenght < 400:
         timy.color(colour)
         lenght += 10
 
-print(timy.pos())
+# print(timy.pos())
 
+# you can use this one too:
+# for _ in range(15):
+#     timy.forward(10)
+#     timy.penup()
+#     timy.forward(10)
+#     timy.pendown()
 
 screen = Screen()
 screen.exitonclick()
