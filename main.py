@@ -3,23 +3,23 @@ from turtle import Turtle, Screen
 from colour_list import colour
 from random import choice, randint
 
-
-def next_move():
-    return choice([True, False])
-
-
-def turn():
-    if next_move():
-        timy.left(90)
-    else:
-        timy.right(90)
-
-
-def advance():
-    if next_move():
-        timy.forward(20)
-    else:
-        timy.backward(20)
+#
+# def next_move():
+#     return choice([True, False])
+#
+#
+# def turn():
+#     if next_move():
+#         timy.left(90)
+#     else:
+#         timy.right(90)
+#
+#
+# def advance():
+#     if next_move():
+#         timy.forward(20)
+#     else:
+#         timy.backward(20)
 
 
 timy = Turtle()
@@ -92,13 +92,13 @@ timy.shape("turtle")
 # make timy fast!
 timy.speed(0)
 # make timy draw a thick line
-timy.pensize(6)
-#
-for _ in range(400):
-    # timy.color(choice(colour))
-    timy.pencolor(random_colour())
-    advance()
-    turn()
+# timy.pensize(6)
+# #
+# for _ in range(400):
+#     # timy.color(choice(colour))
+#     timy.pencolor(random_colour())
+#     advance()
+#     turn()
 
 
 # her solution was to use .setheading()
@@ -108,6 +108,12 @@ for _ in range(400):
     # timy.forward(30)
     # timy.setheading(choice([0,90,180, 270]))
 
+
+# make timy draw a spirograph with random colours
+for _ in range (0, 360, 3):
+    timy.pencolor(random_colour())
+    timy.circle(100)
+    timy.setheading(_)
 
 screen = Screen()
 screen.exitonclick()
