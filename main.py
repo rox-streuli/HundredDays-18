@@ -1,6 +1,7 @@
+import turtle
 from turtle import Turtle, Screen
 from colour_list import colour
-from random import choice
+from random import choice, randint
 
 
 def next_move():
@@ -22,6 +23,19 @@ def advance():
 
 
 timy = Turtle()
+# to generate a random rgb colour first change the turtle colormode()
+# method. Then create a function to generate random rgb colour tuples.
+# use it with timy.pencolor(tuple)
+turtle.colormode(255)
+
+
+def random_colour():
+    r = randint(0, 255)
+    g = randint(0, 255)
+    b = randint(0, 255)
+    return (r, g, b)
+
+
 # # hid timy from view
 # timy.hideturtle()
 # # do not draw a line qhile moving
@@ -79,11 +93,21 @@ timy.shape("turtle")
 timy.speed(0)
 # make timy draw a thick line
 timy.pensize(6)
-
+#
 for _ in range(400):
-    timy.color(choice(colour))
+    # timy.color(choice(colour))
+    timy.pencolor(random_colour())
     advance()
     turn()
+
+
+# her solution was to use .setheading()
+# easier than my solution
+# for _ in range(400):
+    # timy.color(choice(colour))
+    # timy.forward(30)
+    # timy.setheading(choice([0,90,180, 270]))
+
 
 screen = Screen()
 screen.exitonclick()
