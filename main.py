@@ -110,10 +110,20 @@ timy.speed(0)
 
 
 # make timy draw a spirograph with random colours
-for _ in range (0, 360, 3):
-    timy.pencolor(random_colour())
-    timy.circle(100)
-    timy.setheading(_)
+# for _ in range (0, 360, 3):
+#     timy.pencolor(random_colour())
+#     timy.circle(100)
+#     timy.setheading(_)
+
+# you can create a function and set gap between circles
+def spirograph(gap):
+    for _ in range(0, 360, gap):
+        timy.pencolor(random_colour())
+        timy.circle(100)
+        timy.setheading(_)
+
+
+spirograph(10)  # XD
 
 screen = Screen()
 screen.exitonclick()
